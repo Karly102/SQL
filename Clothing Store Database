@@ -1,0 +1,19 @@
+--Create a Store Database.
+
+CREATE TABLE Store (id INTEGER PRIMARY KEY, products TEXT, price INTEGER, size TEXT, release_date TEXT);
+
+INSERT INTO Store VALUES (1, "Shirts", 5, "SM", 2021);
+Insert into store values (2, "Long Pants", 3, "M", 2021);
+insert into store values (3, "Short Pants", 2, "L", 2021);
+insert into store values (4, "Jackets", 3, "XL", 2020);
+insert into store values (5, "Jackets", 2, "L", 2022);
+
+Select * from store;
+
+--Display the items by price.
+Select * from store order by price;
+
+--What's the average release date.
+Select avg(release_date) from store;
+
+Select * from store where price > 3;
