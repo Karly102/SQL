@@ -1,0 +1,50 @@
+CREATE TABLE Famous_People (id INTEGER Primary Key AUTOINCREMENT, Name TEXT, Age INTEGER); 
+
+INSERT INTO Famous_People (name, age) VALUES ("Chris Evans", 41);
+INSERT INTO Famous_People (name, age) VALUES ("Scarlett Johansson", 37);
+INSERT INTO Famous_People (name, age) VALUES ("Robert Downey Jr.", 57);
+INSERT INTO Famous_People (name, age) VALUES ("Chris Hemsworth", 39);
+INSERT INTO Famous_People (name, age) VALUES ("Mark Ruffalo", 54);
+INSERT INTO Famous_People (name, age) VALUES ("Tom Hiddleston", 41);
+INSERT INTO Famous_People (name, age) VALUES ("Tom Holand", 26);
+INSERT INTO Famous_People (name, age) VALUES ("Jeremy Renner", 51);
+
+CREATE TABLE Hobbies (id INTEGER Primary Key AUTOINCREMENT, Person_ID TEXT, Activity TEXT);
+
+INSERT INTO Hobbies (person_id, activity) VALUES (1, "Tap Dancing");
+INSERT INTO Hobbies (person_id, activity) VALUES (2, "Shopping");
+INSERT INTO Hobbies (person_id, activity) VALUES (3, "Martial Arts");
+INSERT INTO Hobbies (person_id, activity) VALUES (4, "Beekeeping");
+INSERT INTO Hobbies (person_id, activity) VALUES (5, "Farming");
+INSERT INTO Hobbies (person_id, activity) VALUES (6, "Cooking");
+INSERT INTO Hobbies (person_id, activity) VALUES (7, "Dancing");
+INSERT INTO Hobbies (person_id, activity) VALUES (8, "Flip Houses");
+
+CREATE TABLE Juicy_Facts (id INTEGER Primary Key AUTOINCREMENT, Person_ID INTEGER, Nationality TEXT, Biggest_Role TEXT, Net_Worth TEXT);  
+
+INSERT INTO Juicy_Facts (person_id, nationality, biggest_role, net_worth) VALUES (1, "American", "Captain America", "80 mil");
+INSERT INTO Juicy_Facts (person_id, nationality, biggest_role, net_worth) VALUES (2, "American", "Black Widow", "165 mil");
+INSERT INTO Juicy_Facts (person_id, nationality, biggest_role, net_worth) VALUES (3, "American", "Iron Man", "300 mil");
+INSERT INTO Juicy_Facts (person_id, nationality, biggest_role, net_worth) VALUES (4, "Australian", "Thor", "130 mil");
+INSERT INTO Juicy_Facts (person_id, nationality, biggest_role, net_worth) VALUES (5, "American", "Hulk", "35 mil");
+INSERT INTO Juicy_Facts (person_id, nationality, biggest_role, net_worth) VALUES (6, "British", "Loki", "25 mil");
+INSERT INTO Juicy_Facts (person_id, nationality, biggest_role, net_worth) VALUES (7, "English", "Spider-Man", "25 mil");
+INSERT INTO Juicy_Facts (person_id, nationality, biggest_role, net_worth) VALUES (8, "American", "Hawkeye", "80 mil");
+
+--Display the actors'name with their hobbies.
+SELECT famous_people.name, hobbies.activity
+FROM famous_people
+JOIN hobbies
+ON famous_people.id = hobbies.person_id;
+
+--Display the actor's name and their net worth.
+SELECT Famous_People.Name, Juicy_Facts.Net_Worth
+FROM Famous_People
+JOIN Juicy_Facts
+ON Famous_People.id = Juicy_Facts.Person_id;
+
+--Actor's name, biggest role and net worth.
+SELECT Famous_People.name, Juicy_Facts.Biggest_Role, Juicy_Facts.Net_Worth
+FROM Famous_People
+JOIN Juicy_Facts
+ON Famous_People.id = Juicy_Facts.person_id;
