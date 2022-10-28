@@ -48,3 +48,11 @@ SELECT Famous_People.name, Juicy_Facts.Biggest_Role, Juicy_Facts.Net_Worth
 FROM Famous_People
 JOIN Juicy_Facts
 ON Famous_People.id = Juicy_Facts.person_id;
+
+--Joined all three tables to display Actor's name, Nationality and Hobby.
+SELECT Famous_People.Name, Hobbies.Activity, Juicy_Facts.Nationality
+FROM Famous_People
+JOIN Hobbies
+ON Famous_People.id = Hobbies.person_id
+JOIN Juicy_Facts
+ON Famous_People.id = Juicy_Facts.Person_id;
